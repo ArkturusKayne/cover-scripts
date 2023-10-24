@@ -8,6 +8,10 @@ function checkFormValues() {
     const cover = coverSelection.value;
     const range = rangeSelection.getAttribute('aria-valuenow');
 
+    if(gender && cover && range) {
+        document.querySelector("#get-my-deals").disabled = false;
+    }
+
     document.querySelectorAll('.collection-item').forEach((element) => {
         element.children[0].classList.remove('preferred');
         element.style.display = 'block';
