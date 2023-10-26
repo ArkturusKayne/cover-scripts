@@ -32,7 +32,7 @@ function checkFormValues() {
         firstForWomen: '1st-for-women'
     };
 
-    const parentSelector =  flkty ? 'flickity-slider' : '.collection-list';
+    const parentSelector =  flkty ? '.flickity-slider' : '.collection-list';
 
     switch (gender) {
         case 'female':
