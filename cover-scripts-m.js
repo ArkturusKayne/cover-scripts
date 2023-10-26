@@ -331,4 +331,8 @@ function checkFormValues() {
         }
             break;
     }
+    flkty.reloadCells();
+    
+    // Optionally, slide to the first cell or any other cell if desired
+    flkty.select(0);
 }
