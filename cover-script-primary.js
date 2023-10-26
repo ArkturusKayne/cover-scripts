@@ -34,7 +34,7 @@ function checkFormValues() {
 
     let parentSelector = '.collection-list';
     
-    if(flkty) {
+    if(undefined !== flkty) {
         parentSelector = '.flickity-slider';
     } 
 
