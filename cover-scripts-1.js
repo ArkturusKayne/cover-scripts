@@ -32,20 +32,22 @@ function checkFormValues() {
         firstForWomen: '1st-for-women'
     };
 
+    const parentSelector =  flkty ? 'flickity-slider' : '.collection-list';
+
     switch (gender) {
         case 'female':
             if (cover === coverOptionValues.afrikaans) {
                 document.querySelector(`[cover-item-name="${coverItemNames.virseker}"]`).children[0].classList.add('preferred');
 
-                document.querySelector('.collection-list').insertBefore(
+                document.querySelector(parentSelector).insertBefore(
                     document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`),
                     document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`)
                 ) 
-                document.querySelector('.collection-list').insertBefore(
+                document.querySelector(parentSelector).insertBefore(
                     document.querySelector(`[cover-item-name="${coverItemNames.firstForWomen}"`),
                     document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`)
                 )
-                document.querySelector('.collection-list').insertBefore(
+                document.querySelector(parentSelector).insertBefore(
                     document.querySelector(`[cover-item-name="${coverItemNames.virseker}"`),
                     document.querySelector(`[cover-item-name="${coverItemNames.firstForWomen}"`)
                 )
@@ -54,15 +56,15 @@ function checkFormValues() {
                 document.querySelector(`[cover-item-name="${coverItemNames.firstForWomen}"]`).children[0].classList.add('preferred');
 
 
-                document.querySelector('.collection-list').insertBefore(
+                document.querySelector(parentSelector).insertBefore(
                     document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`),
                     document.querySelector(`[cover-item-name="${coverItemNames.dialDirect}"`)
                 ) 
-                document.querySelector('.collection-list').insertBefore(
+                document.querySelector(parentSelector).insertBefore(
                     document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`),
                     document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`)
                 )
-                document.querySelector('.collection-list').insertBefore(
+                document.querySelector(parentSelector).insertBefore(
                     document.querySelector(`[cover-item-name="${coverItemNames.firstForWomen}"`),
                     document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`)
                 )
@@ -70,15 +72,15 @@ function checkFormValues() {
             } else if (parseInt(range) >= 351000) {
                 document.querySelector(`[cover-item-name="${coverItemNames.firstForWomen}"]`).children[0].classList.add('preferred');
 
-                document.querySelector('.collection-list').insertBefore(
+                document.querySelector(parentSelector).insertBefore(
                     document.querySelector(`[cover-item-name="${coverItemNames.dialDirect}"`),// third
                     document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`)// last
                 ) 
-                document.querySelector('.collection-list').insertBefore(
+                document.querySelector(parentSelector).insertBefore(
                     document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`),// second
                     document.querySelector(`[cover-item-name="${coverItemNames.dialDirect}"`)// third
                 )
-                document.querySelector('.collection-list').insertBefore(
+                document.querySelector(parentSelector).insertBefore(
                     document.querySelector(`[cover-item-name="${coverItemNames.firstForWomen}"`),// first
                     document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`)// second
                 )
@@ -90,15 +92,15 @@ function checkFormValues() {
         if (cover === coverOptionValues.budget) {
             document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"]`).children[0].classList.add('preferred');
 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.dialDirect}"`),// third
                 document.querySelector(`[cover-item-name="${coverItemNames.virseker}"`)// last
             ) 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`),// second
                 document.querySelector(`[cover-item-name="${coverItemNames.dialDirect}"`)// third
             )
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`),// first
                 document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`)// second
             )
@@ -107,15 +109,15 @@ function checkFormValues() {
         } else if (parseInt(range) < 351000 && cover === coverOptionValues.claim) {
             document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"]`).children[0].classList.add('preferred');
 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.dialDirect}"`),// third
                 document.querySelector(`[cover-item-name="${coverItemNames.virseker}"`)// last
             ) 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`),// second
                 document.querySelector(`[cover-item-name="${coverItemNames.dialDirect}"`)// third
             )
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`),// first
                 document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`)// second
             )
@@ -124,15 +126,15 @@ function checkFormValues() {
         } else if (parseInt(range) >= 351000 && cover === coverOptionValues.claim) {
             document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"]`).children[0].classList.add('preferred');
 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`),// third
                 document.querySelector(`[cover-item-name="${coverItemNames.virseker}"`)// last
             ) 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.dialDirect}"`),// second
                 document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`)// third
             )
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`),// first
                 document.querySelector(`[cover-item-name="${coverItemNames.dialDirect}"`)// second
             )
@@ -141,15 +143,15 @@ function checkFormValues() {
         } else if (parseInt(range) < 351000 && cover === coverOptionValues.afrikaans) {
             document.querySelector(`[cover-item-name="${coverItemNames.virseker}"]`).children[0].classList.add('preferred');
 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`),// third
                 document.querySelector(`[cover-item-name="${coverItemNames.dialDirect}"`)// last
             ) 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`),// second
                 document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`)// third
             )
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.virseker}"`),// first
                 document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`)// second
             )
@@ -158,15 +160,15 @@ function checkFormValues() {
         } else if (parseInt(range) >= 351000 && cover === coverOptionValues.afrikaans) {
             document.querySelector(`[cover-item-name="${coverItemNames.virseker}"]`).children[0].classList.add('preferred');
 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`),// third
                 document.querySelector(`[cover-item-name="${coverItemNames.dialDirect}"`)// last
             ) 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`),// second
                 document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`)// third
             )
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.virseker}"`),// first
                 document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`)// second
             )
@@ -175,15 +177,15 @@ function checkFormValues() {
         } else if (parseInt(range) < 351000 && cover === coverOptionValues.combo) {
             document.querySelector(`[cover-item-name="${coverItemNames.virseker}"]`).children[0].classList.add('preferred');
 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`),// third
                 document.querySelector(`[cover-item-name="${coverItemNames.dialDirect}"`)// last
             ) 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`),// second
                 document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`)// third
             )
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.virseker}"`),// first
                 document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`)// second
             )
@@ -192,15 +194,15 @@ function checkFormValues() {
         } else if (parseInt(range) >= 351000 && cover === coverOptionValues.combo) {
             document.querySelector(`[cover-item-name="${coverItemNames.virseker}"]`).children[0].classList.add('preferred');
 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`),// third
                 document.querySelector(`[cover-item-name="${coverItemNames.dialDirect}"`)// last
             ) 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`),// second
                 document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`)// third
             )
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.virseker}"`),// first
                 document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`)// second
             )
@@ -213,15 +215,15 @@ function checkFormValues() {
             document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"]`).children[0].classList.add('preferred');
 
 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.dialDirect}"`),// third
                 document.querySelector(`[cover-item-name="${coverItemNames.virseker}"`)// last
             ) 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`),// second
                 document.querySelector(`[cover-item-name="${coverItemNames.dialDirect}"`)// third
             )
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`),// first
                 document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`)// second
             )
@@ -230,15 +232,15 @@ function checkFormValues() {
         } else if (parseInt(range) < 351000 && cover === coverOptionValues.claim) {
             document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"]`).children[0].classList.add('preferred');
 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.dialDirect}"`),// third
                 document.querySelector(`[cover-item-name="${coverItemNames.virseker}"`)// last
             ) 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`),// second
                 document.querySelector(`[cover-item-name="${coverItemNames.dialDirect}"`)// third
             )
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`),// first
                 document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`)// second
             )
@@ -247,15 +249,15 @@ function checkFormValues() {
         } else if (parseInt(range) >= 351000 && cover === coverOptionValues.claim) {
             document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"]`).children[0].classList.add('preferred');
 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`),// third
                 document.querySelector(`[cover-item-name="${coverItemNames.virseker}"`)// last
             ) 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.dialDirect}"`),// second
                 document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`)// third
             )
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`),// first
                 document.querySelector(`[cover-item-name="${coverItemNames.dialDirect}"`)// second
             )
@@ -264,15 +266,15 @@ function checkFormValues() {
         } else if (parseInt(range) < 351000 && cover === coverOptionValues.afrikaans) {
             document.querySelector(`[cover-item-name="${coverItemNames.virseker}"]`).children[0].classList.add('preferred');
 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`),// third
                 document.querySelector(`[cover-item-name="${coverItemNames.dialDirect}"`)// last
             ) 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`),// second
                 document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`)// third
             )
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.virseker}"`),// first
                 document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`)// second
             )
@@ -281,15 +283,15 @@ function checkFormValues() {
         } else if (parseInt(range) >= 351000 && cover === coverOptionValues.afrikaans) {
             document.querySelector(`[cover-item-name="${coverItemNames.virseker}"]`).children[0].classList.add('preferred');
 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`),// third
                 document.querySelector(`[cover-item-name="${coverItemNames.dialDirect}"`)// last
             ) 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`),// second
                 document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`)// third
             )
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.virseker}"`),// first
                 document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`)// second
             )
@@ -298,15 +300,15 @@ function checkFormValues() {
         } else if (parseInt(range) < 351000 && cover === coverOptionValues.combo) {
             document.querySelector(`[cover-item-name="${coverItemNames.virseker}"]`).children[0].classList.add('preferred');
 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`),// third
                 document.querySelector(`[cover-item-name="${coverItemNames.dialDirect}"`)// last
             ) 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`),// second
                 document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`)// third
             )
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.virseker}"`),// first
                 document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`)// second
             )
@@ -315,15 +317,15 @@ function checkFormValues() {
         } else if (parseInt(range) >= 351000 && cover === coverOptionValues.combo) {
             document.querySelector(`[cover-item-name="${coverItemNames.virseker}"]`).children[0].classList.add('preferred');
 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`),// third
                 document.querySelector(`[cover-item-name="${coverItemNames.dialDirect}"`)// last
             ) 
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`),// second
                 document.querySelector(`[cover-item-name="${coverItemNames.budgetInsurance}"`)// third
             )
-            document.querySelector('.collection-list').insertBefore(
+            document.querySelector(parentSelector).insertBefore(
                 document.querySelector(`[cover-item-name="${coverItemNames.virseker}"`),// first
                 document.querySelector(`[cover-item-name="${coverItemNames.autoGeneral}"`)// second
             )
