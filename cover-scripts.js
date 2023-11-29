@@ -692,7 +692,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(`[cover-option]="${coverOptionValues.claim}"`).classList.add("cover-selection-active")
         break;
     case coverOptionValues.combo:
-        document.querySelector(`[cover-option]="${coverOptionValues.claim}"`).classList.add("cover-selection-active")
+        document.querySelector(`[cover-option]="${coverOptionValues.combo}"`).classList.add("cover-selection-active")
         break;
     case coverOptionValues.afrikaans:
         document.querySelector(`[cover-option]="${coverOptionValues.afrikaans}"`).classList.add("cover-selection-active")
@@ -702,6 +702,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   rangeSelection.setAttribute("aria-valuenow", carValue);
+
+  var updateEvent = new CustomEvent("updateSlider", {
+    detail: null
+  });
+  window.dispatchEvent(updateEvent);
+
   document.querySelector("#ccCheckbox").checked =
     coverType === "essential" ? true : false;
 });
