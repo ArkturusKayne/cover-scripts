@@ -702,12 +702,9 @@ document.addEventListener("DOMContentLoaded", () => {
           break;
     }
   
-    rangeSelection.setAttribute("aria-valuenow", carValue);
-  
-    var updateEvent = new CustomEvent("updateSlider", {
-      detail: null
-    });
-    window.dispatchEvent(updateEvent);
+    document.querySelector(
+      ".fs-rangeslider_track .fs-rangeslider_handle"
+    ).setAttribute("aria-valuenow", carValue);
   
     document.querySelector("#ccCheckbox").checked =
       coverType === "essential" ? true : false;
