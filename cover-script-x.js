@@ -666,47 +666,54 @@ document.addEventListener("DOMContentLoaded", () => {
   
     genderSelection.value = gender;
   
-    switch (gender) {
-      case "male":
-        document
-          .querySelector("#male-gender-selection")
-          .classList.add("selection-button-active");
-        break;
-      case "female":
-        document
-          .querySelector("#female-gender-selection")
-          .classList.add("selection-button-active");
-        break;
-      default:
-        document
-          .querySelector("#other-gender-selection")
-          .classList.add("selection-button-active");
-        break;
+    if(gender) {
+      switch (gender) {
+        case "male":
+          document
+            .querySelector("#male-gender-selection")
+            .classList.add("selection-button-active");
+          break;
+        case "female":
+          document
+            .querySelector("#female-gender-selection")
+            .classList.add("selection-button-active");
+          break;
+        default:
+          document
+            .querySelector("#other-gender-selection")
+            .classList.add("selection-button-active");
+          break;
+      }
     }
   
-    coverSelection.value = coverOption;
-    switch (coverOption) {
-      case coverOptionValues.budget:
-          document.querySelector(`[cover-option="${coverOptionValues.budget}"]`).querySelector(".cover-selection-button").click();
-          break;
-      case coverOptionValues.claim:
-          document.querySelector(`[cover-option="${coverOptionValues.claim}"]`).querySelector(".cover-selection-button").click();
-          break;
-      case coverOptionValues.combo:
-          document.querySelector(`[cover-option="${coverOptionValues.combo}"]`).querySelector(".cover-selection-button").click();
-          break;
-      case coverOptionValues.afrikaans:
-          document.querySelector(`[cover-option="${coverOptionValues.afrikaans}"]`).querySelector(".cover-selection-button").click();
-          break;
-      default:
-          break;
+    if(coverOption) {
+      coverSelection.value = coverOption;
+      switch (coverOption) {
+        case coverOptionValues.budget:
+            document.querySelector(`[cover-option="${coverOptionValues.budget}"]`).querySelector(".cover-selection-button").click();
+            break;
+        case coverOptionValues.claim:
+            document.querySelector(`[cover-option="${coverOptionValues.claim}"]`).querySelector(".cover-selection-button").click();
+            break;
+        case coverOptionValues.combo:
+            document.querySelector(`[cover-option="${coverOptionValues.combo}"]`).querySelector(".cover-selection-button").click();
+            break;
+        case coverOptionValues.afrikaans:
+            document.querySelector(`[cover-option="${coverOptionValues.afrikaans}"]`).querySelector(".cover-selection-button").click();
+            break;
+        default:
+            break;
+      }
     }
   
-    document.querySelector(
-      ".fs-rangeslider_track .fs-rangeslider_handle"
-    ).setAttribute("aria-valuenow", carValue);
-  
-    document.querySelector("#ccCheckbox").checked =
-      coverType === "essential" ? true : false;
-  }, 1000)
+    if (carValue) {
+      document.querySelector(
+        ".fs-rangeslider_track .fs-rangeslider_handle"
+      ).setAttribute("aria-valuenow", carValue);
+    }
+    if (coverType) {
+      document.querySelector("#ccCheckbox").checked =
+        coverType === "essential" ? true : false;
+      }
+    }, 1000);
 });
