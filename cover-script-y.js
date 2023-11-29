@@ -712,8 +712,9 @@ document.addEventListener("DOMContentLoaded", () => {
       ).setAttribute("aria-valuenow", carValue);
     }
     if (coverType) {
-      document.querySelector("#ccCheckbox").checked =
-        coverType === "essential" ? true : false;
+      if(coverType === "essential") {
+        document.querySelector("#ccCheckbox").click();
+      }
       }
     }, 1000);
 });
