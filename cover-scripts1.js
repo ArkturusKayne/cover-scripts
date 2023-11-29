@@ -654,60 +654,62 @@ function checkFormValues() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const queryParams = new Proxy(new URLSearchParams(window.location.search), {
-    get: (searchParams, prop) => searchParams.get(prop),
-  });
-
-  const gender = queryParams.gender;
-  const coverOption = queryParams.coverOption;
-  const carValue = queryParams.carValue;
-  const coverType = queryParams.coverType;
-
-  genderSelection.value = gender;
-
-  switch (gender) {
-    case "male":
-      document
-        .querySelector("#male-gender-selection")
-        .classList.add("selection-button-active");
-      break;
-    case "female":
-      document
-        .querySelector("#female-gender-selection")
-        .classList.add("selection-button-active");
-      break;
-    default:
-      document
-        .querySelector("#other-gender-selection")
-        .classList.add("selection-button-active");
-      break;
-  }
-
-  coverSelection.value = coverOption;
-  switch (coverOption) {
-    case coverOptionValues.budget:
-        document.querySelector(`[cover-option="${coverOptionValues.budget}"]`).querySelector(".cover-selection-button").click();
+  setTimeout(() => {
+    const queryParams = new Proxy(new URLSearchParams(window.location.search), {
+      get: (searchParams, prop) => searchParams.get(prop),
+    });
+  
+    const gender = queryParams.gender;
+    const coverOption = queryParams.coverOption;
+    const carValue = queryParams.carValue;
+    const coverType = queryParams.coverType;
+  
+    genderSelection.value = gender;
+  
+    switch (gender) {
+      case "male":
+        document
+          .querySelector("#male-gender-selection")
+          .classList.add("selection-button-active");
         break;
-    case coverOptionValues.claim:
-        document.querySelector(`[cover-option="${coverOptionValues.claim}"]`).querySelector(".cover-selection-button").click();
+      case "female":
+        document
+          .querySelector("#female-gender-selection")
+          .classList.add("selection-button-active");
         break;
-    case coverOptionValues.combo:
-        document.querySelector(`[cover-option="${coverOptionValues.combo}"]`).querySelector(".cover-selection-button").click();
+      default:
+        document
+          .querySelector("#other-gender-selection")
+          .classList.add("selection-button-active");
         break;
-    case coverOptionValues.afrikaans:
-        document.querySelector(`[cover-option="${coverOptionValues.afrikaans}"]`).querySelector(".cover-selection-button").click();
-        break;
-    default:
-        break;
-  }
-
-  rangeSelection.setAttribute("aria-valuenow", carValue);
-
-  var updateEvent = new CustomEvent("updateSlider", {
-    detail: null
-  });
-  window.dispatchEvent(updateEvent);
-
-  document.querySelector("#ccCheckbox").checked =
-    coverType === "essential" ? true : false;
+    }
+  
+    coverSelection.value = coverOption;
+    switch (coverOption) {
+      case coverOptionValues.budget:
+          document.querySelector(`[cover-option="${coverOptionValues.budget}"]`).querySelector(".cover-selection-button").click();
+          break;
+      case coverOptionValues.claim:
+          document.querySelector(`[cover-option="${coverOptionValues.claim}"]`).querySelector(".cover-selection-button").click();
+          break;
+      case coverOptionValues.combo:
+          document.querySelector(`[cover-option="${coverOptionValues.combo}"]`).querySelector(".cover-selection-button").click();
+          break;
+      case coverOptionValues.afrikaans:
+          document.querySelector(`[cover-option="${coverOptionValues.afrikaans}"]`).querySelector(".cover-selection-button").click();
+          break;
+      default:
+          break;
+    }
+  
+    rangeSelection.setAttribute("aria-valuenow", carValue);
+  
+    var updateEvent = new CustomEvent("updateSlider", {
+      detail: null
+    });
+    window.dispatchEvent(updateEvent);
+  
+    document.querySelector("#ccCheckbox").checked =
+      coverType === "essential" ? true : false;
+  }, 1000)
 });
