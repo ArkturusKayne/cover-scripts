@@ -686,16 +686,16 @@ document.addEventListener("DOMContentLoaded", () => {
   coverSelection.value = coverOption;
   switch (coverOption) {
     case coverOptionValues.budget:
-        document.querySelector(`[cover-option]="${coverOptionValues.budget}"`).classList.add("cover-selection-active")
+        document.querySelector(`[cover-option="${coverOptionValues.budget}]"`).classList.add("cover-selection-active")
         break;
     case coverOptionValues.claim:
-        document.querySelector(`[cover-option]="${coverOptionValues.claim}"`).classList.add("cover-selection-active")
+        document.querySelector(`[cover-option="${coverOptionValues.claim}]"`).classList.add("cover-selection-active")
         break;
     case coverOptionValues.combo:
-        document.querySelector(`[cover-option]="${coverOptionValues.combo}"`).classList.add("cover-selection-active")
+        document.querySelector(`[cover-option="${coverOptionValues.combo}]"`).classList.add("cover-selection-active")
         break;
     case coverOptionValues.afrikaans:
-        document.querySelector(`[cover-option]="${coverOptionValues.afrikaans}"`).classList.add("cover-selection-active")
+        document.querySelector(`[cover-option="${coverOptionValues.afrikaans}]"`).classList.add("cover-selection-active")
         break;
     default:
         break;
