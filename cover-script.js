@@ -343,3 +343,21 @@ function checkFormValues() {
         flkty.select(0);
     }
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const queryParams = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+      });
+      
+      const gender = queryParams.gender;
+      const coverOption = queryParams.coverOption;
+      const carValue = queryParams.carValue;
+      const coverType = queryParams.coverType;
+
+    genderSelection.value = gender;
+    coverSelection.value = coverOption;
+    rangeSelection.setAttribute('aria-valuenow', carValue);
+    document.querySelector("#ccCheckbox").checked = coverType === 'essential' ? true : false;
+      
+});
