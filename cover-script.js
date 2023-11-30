@@ -667,7 +667,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   
     const gender = queryParams.gender;
-    const coverOption = coverOptionMap[queryParams.coverOption.toLowerCase()];
+    const coverOption = coverOptionMap[queryParams?.coverOption?.toLowerCase()];
     const carValue = queryParams.carValue;
     const coverType = queryParams.coverType;
   
