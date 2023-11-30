@@ -658,9 +658,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const queryParams = new Proxy(new URLSearchParams(window.location.search), {
       get: (searchParams, prop) => searchParams.get(prop),
     });
+
+    const coverOptionMap = {
+      "budget-friendly-premiums": coverOptionValues.budget,
+      "combo-insurance-deals": coverOptionValues.combo,
+      "excellent-claim-reviews": coverOptionValues.claim,
+      "cover-in-afrikaans": coverOptionValues.afrikaans
+    }
   
     const gender = queryParams.gender;
-    const coverOption = queryParams.coverOption;
+    const coverOption = coverOptionMap[queryParams.coverOption.toLowerCase()];
     const carValue = queryParams.carValue;
     const coverType = queryParams.coverType;
   
@@ -715,6 +722,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if(coverType === "essential") {
         document.querySelector("#ccCheckbox").click();
       }
-      }
+    }
+    document.querySelector("#get-my-deals").click();
     }, 1000);
 });
