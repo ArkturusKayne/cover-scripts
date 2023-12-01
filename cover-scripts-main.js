@@ -578,7 +578,7 @@ function checkFormValues() {
         cover === coverOptionValues.combo
       ) {
         document
-          .querySelector(`[cover-item-name="${coverItemNames.virseker}"]`)
+          .querySelector(`[cover-item-name="${coverItemNames.dialDirect}"]`)
           .children[0].classList.add("preferred");
 
         document.querySelector(parentSelector).insertBefore(
@@ -586,7 +586,7 @@ function checkFormValues() {
             `[cover-item-name="${coverItemNames.autoGeneral}"`
           ), // third
           document.querySelector(
-            `[cover-item-name="${coverItemNames.dialDirect}"`
+            `[cover-item-name="${coverItemNames.virseker}"`
           ) // last
         );
         document.querySelector(parentSelector).insertBefore(
@@ -599,7 +599,7 @@ function checkFormValues() {
         );
         document.querySelector(parentSelector).insertBefore(
           document.querySelector(
-            `[cover-item-name="${coverItemNames.virseker}"`
+            `[cover-item-name="${coverItemNames.dialDirect}"`
           ), // first
           document.querySelector(
             `[cover-item-name="${coverItemNames.budgetInsurance}"`
@@ -613,7 +613,7 @@ function checkFormValues() {
         cover === coverOptionValues.combo
       ) {
         document
-          .querySelector(`[cover-item-name="${coverItemNames.virseker}"]`)
+          .querySelector(`[cover-item-name="${coverItemNames.dialDirect}"]`)
           .children[0].classList.add("preferred");
 
         document.querySelector(parentSelector).insertBefore(
@@ -621,7 +621,7 @@ function checkFormValues() {
             `[cover-item-name="${coverItemNames.budgetInsurance}"`
           ), // third
           document.querySelector(
-            `[cover-item-name="${coverItemNames.dialDirect}"`
+            `[cover-item-name="${coverItemNames.virseker}"`
           ) // last
         );
         document.querySelector(parentSelector).insertBefore(
@@ -634,7 +634,7 @@ function checkFormValues() {
         );
         document.querySelector(parentSelector).insertBefore(
           document.querySelector(
-            `[cover-item-name="${coverItemNames.virseker}"`
+            `[cover-item-name="${coverItemNames.dialDirect}"`
           ), // first
           document.querySelector(
             `[cover-item-name="${coverItemNames.autoGeneral}"`
