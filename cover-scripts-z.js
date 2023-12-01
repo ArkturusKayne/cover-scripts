@@ -654,16 +654,14 @@ function checkFormValues() {
 }
 
 function calculateAverageFromRange(rangeString) {
-  // Extract the numeric parts of the range
   const numbers = rangeString.match(/\d+/g).map(Number);
-
-  // Convert each number to its full value (e.g., 543 to 543000)
   const fullNumbers = numbers.map(number => number * 1000);
-
-  // Calculate the average of the two numbers
-  const average = (fullNumbers[0] + fullNumbers[1]) / 2;
-
-  return average;
+  if(fullNumbers.length > 1) {
+    const average = (fullNumbers[0] + fullNumbers[1]) / 2;
+    return average;
+  } else {
+    return fullNumbers[0] > 950000 ? 950000 : fullNumbers[0]
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
