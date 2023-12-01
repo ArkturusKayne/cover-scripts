@@ -653,6 +653,19 @@ function checkFormValues() {
   }
 }
 
+function calculateAverageFromRange(rangeString) {
+  // Extract the numeric parts of the range
+  const numbers = rangeString.match(/\d+/g).map(Number);
+
+  // Convert each number to its full value (e.g., 543 to 543000)
+  const fullNumbers = numbers.map(number => number * 1000);
+
+  // Calculate the average of the two numbers
+  const average = (fullNumbers[0] + fullNumbers[1]) / 2;
+
+  return average;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     const queryParams = new Proxy(new URLSearchParams(window.location.search), {
@@ -668,7 +681,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
     const gender = queryParams.gender.toLowerCase();
     const coverOption = coverOptionMap[queryParams?.coverOption?.toLowerCase()];
-    const carValue = queryParams.carValue;
+    const carValue = calculateAverageFromRange(queryParams.carValue);
     const coverType = queryParams.coverType;
   
     genderSelection.value = gender;
