@@ -666,7 +666,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "cover-in-afrikaans": coverOptionValues.afrikaans
     }
   
-    const gender = queryParams.gender;
+    const gender = queryParams.gender.toLowerCase();
     const coverOption = coverOptionMap[queryParams?.coverOption?.toLowerCase()];
     const carValue = queryParams.carValue;
     const coverType = queryParams.coverType;
@@ -717,6 +717,8 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelector(
         ".fs-rangeslider_track .fs-rangeslider_handle"
       ).setAttribute("aria-valuenow", carValue);
+      document.querySelector(".slider-text .price").innerText = carValue;
+      formatSliderValue();
     }
     if (coverType) {
       if(coverType === "essential") {
