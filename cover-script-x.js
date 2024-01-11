@@ -676,7 +676,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "excellent-claim-reviews": coverOptionValues.claim,
       "cover-in-afrikaans": coverOptionValues.afrikaans
     }
-    const {
+    let {
       genderQueryParam,
       coverOptionQueryParam,
       carValueQueryParam,
