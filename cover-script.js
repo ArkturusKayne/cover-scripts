@@ -676,11 +676,42 @@ document.addEventListener("DOMContentLoaded", () => {
       "excellent-claim-reviews": coverOptionValues.claim,
       "cover-in-afrikaans": coverOptionValues.afrikaans
     }
-  
-    const gender = queryParams.gender.toLowerCase();
-    const coverOption = coverOptionMap[queryParams?.coverOption?.toLowerCase()];
-    const carValue = calculateAverageFromRange(queryParams.carValue);
-    const coverType = queryParams.coverType;
+    const {
+      genderQueryParam,
+      coverOptionQueryParam,
+      carValueQueryParam,
+      coverTypeQueryParam,
+      vdnQueryParam,
+    } = undefined;
+
+    if (sessionStorage.get("gender")) {
+      genderQueryParam = sessionStorage.get("gender");
+    }
+    if (sessionStorage.get("coverOption")) {
+      coverOptionQueryParam = sessionStorage.get("coverOption");
+    }
+    if (sessionStorage.get("carValue")) {
+      carValueQueryParam = sessionStorage.get("carValue");
+    }
+    if (sessionStorage.get("coverType")) {
+      coverTypeQueryParam = sessionStorage.get("coverType");
+    }
+    if (sessionStorage.get("vdn")) {
+      vdnQueryParam = sessionStorage.get("vdn");
+    }
+
+    const gender = genderQueryParam
+      ? genderQueryParam.toLowerCase()
+      : queryParams.gender.toLowerCase();
+    const coverOption = coverOptionQueryParam
+      ? coverOptionMap[coverOptionQueryParam.toLowerCase()]
+      : coverOptionMap[queryParams?.coverOption?.toLowerCase()];
+    const carValue = carValueQueryParam
+      ? calculateAverageFromRange(carValueQueryParam)
+      : calculateAverageFromRange(queryParams.carValue);
+    const coverType = coverTypeQueryParam
+      ? coverTypeQueryParam
+      : queryParams.coverType;
   
     genderSelection.value = gender;
   
