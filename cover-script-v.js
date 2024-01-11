@@ -684,20 +684,20 @@ document.addEventListener("DOMContentLoaded", () => {
       vdnQueryParam,
     } = "";
 
-    if (sessionStorage.get("gender")) {
-      genderQueryParam = sessionStorage.get("gender");
+    if (sessionStorage.getItem("gender")) {
+      genderQueryParam = sessionStorage.getItem("gender");
     }
-    if (sessionStorage.get("coverOption")) {
-      coverOptionQueryParam = sessionStorage.get("coverOption");
+    if (sessionStorage.getItem("coverOption")) {
+      coverOptionQueryParam = sessionStorage.getItem("coverOption");
     }
-    if (sessionStorage.get("carValue")) {
-      carValueQueryParam = sessionStorage.get("carValue");
+    if (sessionStorage.getItem("carValue")) {
+      carValueQueryParam = sessionStorage.getItem("carValue");
     }
-    if (sessionStorage.get("coverType")) {
-      coverTypeQueryParam = sessionStorage.get("coverType");
+    if (sessionStorage.getItem("coverType")) {
+      coverTypeQueryParam = sessionStorage.getItem("coverType");
     }
-    if (sessionStorage.get("vdn")) {
-      vdnQueryParam = sessionStorage.get("vdn");
+    if (sessionStorage.getItem("vdn")) {
+      vdnQueryParam = sessionStorage.getItem("vdn");
     }
 
     const gender =
