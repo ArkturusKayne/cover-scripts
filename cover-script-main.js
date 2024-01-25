@@ -701,19 +701,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const gender =
-      genderQueryParam !== ""
+      genderQueryParam && genderQueryParam !== ""
         ? genderQueryParam.toLowerCase()
         : queryParams.gender.toLowerCase();
     const coverOption =
-      coverOptionQueryParam !== ""
+      coverOptionQueryParam && coverOptionQueryParam !== ""
         ? coverOptionMap[coverOptionQueryParam.toLowerCase()]
         : coverOptionMap[queryParams?.coverOption?.toLowerCase()];
     const carValue =
-      carValueQueryParam !== ""
+      carValueQueryParam && carValueQueryParam !== ""
         ? calculateAverageFromRange(carValueQueryParam)
         : calculateAverageFromRange(queryParams.carValue);
     const coverType =
-      coverTypeQueryParam !== "" ? coverTypeQueryParam : queryParams.coverType;
+      coverTypeQueryParam && coverTypeQueryParam !== ""
+        ? coverTypeQueryParam
+        : queryParams.coverType;
   
     genderSelection.value = gender;
   
